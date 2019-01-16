@@ -33,6 +33,6 @@ class Writer(Human):
 
 	def books(*args):
 
-		return ('I wrote' ,args)
+		return ('I wrote {} books'.format(len(args)))
 pisatel = Writer()
 print (pisatel.books('kashtanka','atlant raspravil plechi','dubrovski'))
