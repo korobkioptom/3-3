@@ -21,7 +21,22 @@ def post_messsaga (text_messagi):
 	chat_id_bot = '606375631'
 	otpravka = requests.post(telegram.format(bot_token)+'sendmessage?chat_id=606375631&text={}'.format(text_messagi))
 	return text_messagi
-post_messsaga('123bot')
+#post_messsaga('123bot')
+def USD_RUB ():
+	curr_get =requests.get('http://www.nbrb.by/API/ExRates/Rates/145')
+	json_dict = curr_get.json()
+	dollar = ['Cur_OfficialRate']
+	return curr_get.json()
+
+def post_dollar ():
+	getcurr=USD_RUB()
+	curr_rate = getcurr['Cur_OfficialRate']
+
+	sender = requests.post(telegram.format(bot_token)+'sendmessage?chat_id=606375631&text={}'.format(curr_rate))
+	return sender
+post_dollar()
+
+
 
 
 
